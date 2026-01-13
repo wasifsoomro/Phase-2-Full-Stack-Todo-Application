@@ -1,0 +1,224 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "tailwindcss";
+
+
+@layer base {
+  :root {
+    /* Modern Color Palette */
+    --background: 0 0% 100%;
+    --foreground: 222.2 47.4% 11.2%;
+
+    /* Primary Colors - Modern Blue */
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary Colors - Modern Purple */
+    --secondary: 252 60% 65%;
+    --secondary-foreground: 0 0% 100%;
+
+    /* Accent Colors - Modern Teal */
+    --accent: 172.8 66.7% 42.7%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Muted Colors */
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    /* Card Colors */
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 47.4% 11.2%;
+
+    /* Popover Colors */
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 47.4% 11.2%;
+
+    /* Border Colors */
+    --border: 214.3 31.8% 91.4%;
+
+    /* Input Colors */
+    --input: 214.3 31.8% 91.4%;
+
+    /* Ring Colors */
+    --ring: 221.2 83.2% 53.3%;
+
+    /* Destructive Colors */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    /* Radius */
+    --radius: 0.5rem;
+
+    /* Modern Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(221.2, 83.2%, 53.3%), hsl(252, 60%, 65%));
+    --gradient-secondary: linear-gradient(135deg, hsl(172.8, 66.7%, 42.7%), hsl(221.2, 83.2%, 53.3%));
+
+    /* Modern Shadows */
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  }
+
+  .dark {
+    --background: 224 71% 4%;
+    --foreground: 213 31% 91%;
+
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 280 66% 72%;
+    --secondary-foreground: 0 0% 100%;
+
+    --accent: 160 60% 40%;
+    --accent-foreground: 0 0% 100%;
+
+    --muted: 223 47% 11%;
+    --muted-foreground: 215.4 16.3% 56.9%;
+
+    --card: 220 65% 8%;
+    --card-foreground: 213 31% 91%;
+
+    --popover: 215 25% 15%;
+    --popover-foreground: 213 31% 95%;
+
+    --border: 216 34% 17%;
+    --input: 216 34% 17%;
+
+    --ring: 212.7 26.8% 83.9%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 85.7% 97.3%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(217.2, 91.2%, 59.8%), hsl(280, 66%, 72%));
+    --gradient-secondary: linear-gradient(135deg, hsl(160, 60%, 40%), hsl(217.2, 91.2%, 59.8%));
+  }
+}
+
+/* Enhanced Animations */
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.3s ease-out;
+  }
+
+  .animate-slide-down {
+    animation: slideDown 0.3s ease-out;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.3s ease-out;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  .animate-bounce-slow {
+    animation: bounce 4s ease-in-out infinite;
+  }
+
+  .animate-shimmer {
+    animation: shimmer 8s infinite linear;
+  }
+
+  .transition-ease {
+    transition: all 0.2s ease-in-out;
+  }
+
+  .transition-standard {
+    transition: all 0.3s ease-in-out;
+  }
+
+  .transition-slow {
+    transition: all 0.5s ease-in-out;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--border));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground));
+}
+
+/* Selection colors */
+::selection {
+  background: hsl(var(--primary) / 0.2);
+}
+
+::-moz-selection {
+  background: hsl(var(--primary) / 0.2);
+}
+
+
+
