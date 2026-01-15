@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "builds": [
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
     {
-      "src": "frontend/next.config.js",
-      "use": "@vercel/next"
+      "source": "/api/:path*",
+      "destination": "/api/:path*"
     }
   ]
 }
