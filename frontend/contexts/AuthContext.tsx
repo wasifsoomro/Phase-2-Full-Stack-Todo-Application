@@ -93,8 +93,10 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   const signup = async (name: string, email: string, password: string) => {
     setIsLoading(true);
+    let response; // Declare response variable outside try block to make it accessible in catch block
+
     try {
-      const response = await api.signup({ email, password, name });
+      response = await api.signup({ email, password, name });
 
       // Store token if provided
       if (response.access_token && typeof window !== 'undefined') {
